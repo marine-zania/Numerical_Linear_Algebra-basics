@@ -3,10 +3,10 @@ import os
 import numpy as np
 import pytest
 
-# set sys.path for local src imports
+# set sys.path to point to src folder
 curr_dir = os.path.dirname(__file__)
-sys.path.append(os.path.abspath(os.path.join(curr_dir, '..')))
-from src.gaussian_elimination import forward_elimination, solve_gaussian_elimination
+sys.path.insert(0, os.path.abspath(os.path.join(curr_dir, '..', 'src')))
+from gaussian_elimination import forward_elimination, solve_gaussian_elimination
 
 def test_mysolver_small():
     A = np.array([[2, 1], [1, 3]], dtype=float)

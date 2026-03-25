@@ -1,5 +1,5 @@
 import numpy as np
-from .substitution import forward_sub, back_sub
+from substitution import forward_sub, back_sub
 
 def LU(A):
     # Perform LU decomposition: A = LU (no pivoting)

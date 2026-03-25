@@ -1,5 +1,5 @@
 import numpy as np
-from .cholesky_decomposition import cholesky
+from cholesky_decomposition import cholesky
 
 def LDLT(A):
     # Perform LDL^T decomposition (building on top of Cholesky)

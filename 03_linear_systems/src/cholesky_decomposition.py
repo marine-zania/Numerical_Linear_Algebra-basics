@@ -1,5 +1,5 @@
 import numpy as np
-from .substitution import forward_sub, back_sub
+from substitution import forward_sub, back_sub
 
 def cholesky(A):
     # Perform a Cholesky decomposition of symmetric positive-definite matrix A

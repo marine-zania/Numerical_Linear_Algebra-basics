@@ -6,7 +6,7 @@ import sys
 import os
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-from src import basic_ops
+from src import matrix_ops
 
 def run_example():
     A = [[1.0, 2.0], [3.0, 4.0]]
@@ -19,11 +19,11 @@ def run_example():
     print(f"  α = {alpha}\n")
     
     print("--- Operations ---")
-    print(f"  A + B      = {basic_ops.add(A, B)}")
-    print(f"  A - B      = {basic_ops.subtract(A, B)}")
-    print(f"  α * A      = {basic_ops.scalar_multiply(alpha, A)}")
-    print(f"  A^T        = {basic_ops.transpose(A)}")
-    print(f"  tr(A)      = {basic_ops.trace(A)}")
+    print(f"  A + B      = {matrix_ops.add(A, B)}")
+    print(f"  A - B      = {matrix_ops.subtract(A, B)}")
+    print(f"  α * A      = {matrix_ops.scalar_multiply(alpha, A)}")
+    print(f"  A^T        = {matrix_ops.transpose(A)}")
+    print(f"  tr(A)      = {matrix_ops.trace(A)}")
 
 if __name__ == "__main__":
     run_example()

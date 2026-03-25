@@ -1,5 +1,5 @@
 """
-Demo: Gram-Schmidt Orthonormalization
+Gram-Schmidt Orthonormalization
 Orthonormalize a set of linearly independent vectors.
 """
 import sys
@@ -8,7 +8,7 @@ import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from src import orthogonalization, basic_ops, norms
 
-def run_demo():
+def run_example():
     # A set of 3 linearly independent vectors in R3
     vectors = [
         [1, 1, 0],
@@ -34,4 +34,4 @@ def run_demo():
     print(f"  q0 · q1 = {dot:+.12f} (should be approx 0)")
 
 if __name__ == "__main__":
-    run_demo()
+    run_example()

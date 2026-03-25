@@ -1,7 +1,7 @@
 """Orthogonalization algorithms."""
-from .geometry import project
-from .basic_ops import subtract
-from .norms import normalize
+import vector_geometry
+import vector_ops
+import vector_norms
 
 def gram_schmidt(vectors):
     """Classical Gram-Schmidt orthonormalization."""
@@ -9,8 +9,8 @@ def gram_schmidt(vectors):
     for v in vectors:
         u = list(v)
         for q in ortho:
-            proj = project(u, q)
-            u = subtract(u, proj)
-        u = normalize(u, norm_type='l2')
+            proj = vector_geometry.project(u, q)
+            u = vector_ops.subtract(u, proj)
+        u = vector_norms.normalize(u, norm_type='l2')
         ortho.append(u)
     return ortho

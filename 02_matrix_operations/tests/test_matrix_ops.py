@@ -3,14 +3,15 @@ import numpy as np
 import sys
 import os
 
-# Add src to path for imports
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-from src import basic_ops
+# point directly to src for isolated imports
+script_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(script_dir, '..', 'src'))
+import matrix_ops
 
 def test_add():
     A = [[1.0, 2.0], [3.0, 4.0]]
     B = [[5.0, 6.0], [7.0, 8.0]]
-    ours = basic_ops.add(A, B)
+    ours = matrix_ops.add(A, B)
     theirs = (np.array(A) + np.array(B)).tolist()
     
     print(f"  Add: {A} + {B}")
@@ -22,7 +23,7 @@ def test_add():
 def test_subtract():
     A = [[1.0, 2.0], [3.0, 4.0]]
     B = [[5.0, 6.0], [7.0, 8.0]]
-    ours = basic_ops.subtract(A, B)
+    ours = matrix_ops.subtract(A, B)
     theirs = (np.array(A) - np.array(B)).tolist()
     
     print(f"  Subtract: {A} - {B}")
@@ -34,7 +35,7 @@ def test_subtract():
 def test_scalar_multiply():
     A = [[1.0, 2.0], [3.0, 4.0]]
     alpha = 2.0
-    ours = basic_ops.scalar_multiply(alpha, A)
+    ours = matrix_ops.scalar_multiply(alpha, A)
     theirs = (alpha * np.array(A)).tolist()
     
     print(f"  Scalar Multiply: {alpha} * {A}")
@@ -45,7 +46,7 @@ def test_scalar_multiply():
 
 def test_transpose():
     A = [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
-    ours = basic_ops.transpose(A)
+    ours = matrix_ops.transpose(A)
     theirs = np.array(A).T.tolist()
     
     print(f"  Transpose: {A}^T")
@@ -56,7 +57,7 @@ def test_transpose():
 
 def test_trace():
     A = [[1.0, 2.0], [3.0, 4.0]]
-    ours = basic_ops.trace(A)
+    ours = matrix_ops.trace(A)
     theirs = float(np.trace(A))
     
     print(f"  Trace: tr({A})")

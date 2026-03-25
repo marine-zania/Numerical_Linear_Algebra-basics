@@ -1,5 +1,5 @@
 import numpy as np
-from .lu_decomposition import LU
+from lu_decomposition import LU
 
 def LDV(A):
     # Perform LDV Matrix decomposition: A = LDV

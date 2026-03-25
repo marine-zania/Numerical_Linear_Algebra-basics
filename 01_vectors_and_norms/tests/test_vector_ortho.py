@@ -3,24 +3,25 @@ import numpy as np
 import sys
 import os
 
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-from src import orthogonalization, basic_ops, norms
+script_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(script_dir, '..', 'src'))
+import vector_ortho, vector_ops, vector_norms
 
 def test_gram_schmidt():
     vecs = [[1, 1, 0], [1, 0, 1], [0, 1, 1]]
     print(f"  Gram-Schmidt on Vectors: {vecs}")
     
-    ortho = orthogonalization.gram_schmidt(vecs)
+    ortho = vector_ortho.gram_schmidt(vecs)
     
     # 1. Verification of Orthonormality
     print("\n    Verifying Orthonormality Results:")
     for i, q in enumerate(ortho):
-        mag = norms.l2(q)
+        mag = vector_norms.l2(q)
         print(f"    - q{i} magnitude: {mag:.6f} (Should be 1.0)")
         assert np.isclose(mag, 1.0)
         
         for j in range(i + 1, len(ortho)):
-            dot = basic_ops.dot_product(q, ortho[j])
+            dot = vector_ops.dot_product(q, ortho[j])
             print(f"    - Cross check q{i}·q{j}: {dot:+.12f} (Should be 0.0)")
             assert np.isclose(dot, 0.0, atol=1e-12)
             

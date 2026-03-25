@@ -1,5 +1,5 @@
 import numpy as np
-from .substitution import back_sub
+from substitution import back_sub
 
 def forward_elimination(A, b):
     # n is matrix dimension

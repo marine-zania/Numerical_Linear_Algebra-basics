@@ -3,11 +3,11 @@ import os
 import numpy as np
 import pytest
 
-# set sys.path for local src imports
+# set sys.path to point to src folder
 curr_dir = os.path.dirname(__file__)
-sys.path.append(os.path.abspath(os.path.join(curr_dir, '..')))
-from src.ldv_decomposition import LDV
-from src.ldlt_decomposition import LDLT
+sys.path.insert(0, os.path.abspath(os.path.join(curr_dir, '..', 'src')))
+from ldv_decomposition import LDV
+from ldlt_decomposition import LDLT
 
 def test_ldv_reconstruction():
     # Test reconstruction A = LDV

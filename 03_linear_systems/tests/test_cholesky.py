@@ -3,10 +3,10 @@ import os
 import numpy as np
 import pytest
 
-# set sys.path for local src imports
+# set sys.path to point to src folder
 curr_dir = os.path.dirname(__file__)
-sys.path.append(os.path.abspath(os.path.join(curr_dir, '..')))
-from src.cholesky_decomposition import cholesky, solve_system_cholesky
+sys.path.insert(0, os.path.abspath(os.path.join(curr_dir, '..', 'src')))
+from cholesky_decomposition import cholesky, solve_system_cholesky
 
 def test_cholesky_reconstruction():
     # Symmetric Positive-Definite Matrix

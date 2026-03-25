@@ -4,12 +4,13 @@ import sys
 import os
 
 # Add src to path for imports
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-from src import basic_ops
+script_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(script_dir, '..', 'src'))
+import vector_ops
 
 def test_add():
     u, v = [1.0, -2.0, 3.0], [4.0, 0.0, -1.0]
-    ours = basic_ops.add(u, v)
+    ours = vector_ops.add(u, v)
     theirs = (np.array(u) + np.array(v)).tolist()
     
     print(f"  Add: {u} + {v}")
@@ -20,7 +21,7 @@ def test_add():
 
 def test_subtract():
     u, v = [1.0, -2.0, 3.0], [4.0, 0.0, -1.0]
-    ours = basic_ops.subtract(u, v)
+    ours = vector_ops.subtract(u, v)
     theirs = (np.array(u) - np.array(v)).tolist()
     
     print(f"  Subtract: {u} - {v}")
@@ -31,7 +32,7 @@ def test_subtract():
 
 def test_dot():
     u, v = [1.0, 2.0, 3.0], [4.0, 5.0, 6.0]
-    ours = basic_ops.dot_product(u, v)
+    ours = vector_ops.dot_product(u, v)
     theirs = float(np.dot(u, v))
     
     print(f"  Dot Product: {u} · {v}")
@@ -42,7 +43,7 @@ def test_dot():
 
 def test_cross():
     u, v = [1, 2, 3], [4, 5, 6]
-    ours = basic_ops.cross_product_3d(u, v)
+    ours = vector_ops.cross_product_3d(u, v)
     theirs = np.cross(u, v).tolist()
     
     print(f"  Cross Product (3D): {u} × {v}")

@@ -3,10 +3,10 @@ import os
 import numpy as np
 import pytest
 
-# set sys.path for local src imports
+# set sys.path to point to src folder
 curr_dir = os.path.dirname(__file__)
-sys.path.append(os.path.abspath(os.path.join(curr_dir, '..')))
-from src.lu_decomposition import LU, solve_system_lu
+sys.path.insert(0, os.path.abspath(os.path.join(curr_dir, '..', 'src')))
+from lu_decomposition import LU, solve_system_lu
 
 def test_lu_reconstruction():
     # Test reconstruction A = LU

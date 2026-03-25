@@ -6,7 +6,7 @@ import sys
 import os
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-from src import multiplication
+from src import matrix_multiply
 
 def run_example():
     A = [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]] # 2x3 matrix
@@ -19,8 +19,8 @@ def run_example():
     print(f"  x       = {x}\n")
     
     print("--- Multiplication Operations ---")
-    print(f"  A * x   = {multiplication.mat_vec_multiply(A, x)}")
-    print(f"  A * B   = {multiplication.mat_mat_multiply(A, B)}")
+    print(f"  A * x   = {matrix_multiply.mat_vec_multiply(A, x)}")
+    print(f"  A * B   = {matrix_multiply.mat_mat_multiply(A, B)}")
 
 if __name__ == "__main__":
     run_example()
