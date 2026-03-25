@@ -1,5 +1,5 @@
 """
-Demo: Vector Norms
+Vector Norms
 Shows L1, L2, Linf, and general Lp norm computations.
 """
 import sys
@@ -8,7 +8,7 @@ import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from src import norms
 
-def run_demo():
+def run_example():
     v = [3.0, -4.0, 0.0]
     
     print(f"--- Vector: {v} ---")
@@ -22,4 +22,4 @@ def run_demo():
     print(f"  New L2 norm:     {norms.l2(u_normed):.4f}")
 
 if __name__ == "__main__":
-    run_demo()
+    run_example()

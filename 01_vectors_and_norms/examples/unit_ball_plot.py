@@ -1,5 +1,5 @@
 """
-Example: Unit ball visualization in 2D
+Unit ball visualization in 2D
 Uses norms.lp implemented in src.
 """
 import numpy as np

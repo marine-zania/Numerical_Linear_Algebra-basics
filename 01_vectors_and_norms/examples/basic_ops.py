@@ -1,5 +1,5 @@
 """
-Demo: Basic Vector Operations
+Basic Vector Operations
 Shows add, subtract, scalar multiply, and dot/cross products.
 """
 import sys
@@ -8,7 +8,7 @@ import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from src import basic_ops
 
-def run_demo():
+def run_example():
     u = [1.0, 2.0, 3.0]
     v = [4.0, 5.0, 6.0]
     alpha = 0.5
@@ -26,4 +26,4 @@ def run_demo():
     print(f"  u × v (3D) = {basic_ops.cross_product_3d(u, v)}")
 
 if __name__ == "__main__":
-    run_demo()
+    run_example()
